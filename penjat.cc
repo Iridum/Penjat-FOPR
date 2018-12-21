@@ -55,19 +55,17 @@ string getRandomWord() {
 // Crea un dibuix del nino segons el nombre d'errors
 string getPlayerSprite(int errors){
 	string sprite = "0033333330\n0020000040\n0020000050\n0020000768\n0020000060\n002000090a\n1111100000";
-	for(int i = 0; i < 11; i++){
-		bool showPart = i <= errors;
-		if     (i == 0) replace( sprite.begin(), sprite.end(), '0', ' ');
-		else if(i == 1) replace( sprite.begin(), sprite.end(), '1', showPart ? '-' : ' ');
-		else if(i == 2) replace( sprite.begin(), sprite.end(), '2', showPart ? '|' : ' ');
-		else if(i == 3) replace( sprite.begin(), sprite.end(), '3', showPart ? '-' : ' ');
-		else if(i == 4) replace( sprite.begin(), sprite.end(), '4', showPart ? '|' : ' ');
-		else if(i == 5) replace( sprite.begin(), sprite.end(), '5', showPart ? 'o' : ' ');
-		else if(i == 6) replace( sprite.begin(), sprite.end(), '6', showPart ? '|' : ' ');
-		else if(i == 7) replace( sprite.begin(), sprite.end(), '7', showPart ? '/' : ' ');
-		else if(i == 8) replace( sprite.begin(), sprite.end(), '8', showPart ? '\\' : ' ');
-		else if(i == 9) replace( sprite.begin(), sprite.end(), '9', showPart ? '/' : ' ');
-		else if(i == 10)replace( sprite.begin(), sprite.end(), 'a', showPart ? '\\' : ' ');
+	replace( sprite.begin(), sprite.end(), '0', ' ');
+	replace( sprite.begin(), sprite.end(), '1', i > 0 ? '-' : ' ');
+	replace( sprite.begin(), sprite.end(), '2', i > 1 ? '|' : ' ');
+	replace( sprite.begin(), sprite.end(), '3', i > 2 ? '-' : ' ');
+	replace( sprite.begin(), sprite.end(), '4', i > 3 ? '|' : ' ');
+	replace( sprite.begin(), sprite.end(), '5', i > 4 ? 'o' : ' ');
+	replace( sprite.begin(), sprite.end(), '6', i > 5 ? '|' : ' ');
+	replace( sprite.begin(), sprite.end(), '7', i > 6 ? '/' : ' ');
+	replace( sprite.begin(), sprite.end(), '8', i > 7 ? '\\' : ' ');
+	replace( sprite.begin(), sprite.end(), '9', i > 8 ? '/' : ' ');
+	replace( sprite.begin(), sprite.end(), 'a', i > 9 ? '\\' : ' ');
 	}
 	
 	return sprite;
